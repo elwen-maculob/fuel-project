@@ -13,7 +13,7 @@ class FuelRouteApiView(APIView):
 
         if not start_location or not finish_location:
             return Response(
-                {"error": "No start and/or location/s provided"},
+                {"error": "No start and/or finish location/s provided"},
                 status=status.HTTP_400_BAD_REQUEST
             )
         try:

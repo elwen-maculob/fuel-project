@@ -24,7 +24,8 @@ class FuelData:
                         "address": row['Address'],
                         "city": row['City'],
                         "state": row['State'],
-                        "price_per_gallon": float(row['Retail Price'])
+                        "price_per_gallon": float(row['Retail Price']),
+                        "full_address": f"{row['City']}, {row['State']}"
                     }
                     FUEL_STATION_LIST.append(fuelstation)
             print(f"Successfully stored {len(FUEL_STATION_LIST)} fuel stations into memory!")

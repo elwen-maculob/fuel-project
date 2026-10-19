@@ -2,15 +2,17 @@ import requests
 
 #using geocoder, convert location text to longitude, lattitude
 def get_coords(location_name):
-    url = "https://nominatim.openstreetmao.org/search"
+    url = "https://nominatim.openstreetmap.org/search"
     params = {
-        'q': location_name
+        'q': location_name,
         'format': 'json',
         'limit': 1
     }
-    headers = {'User-Agent': 'FuelRouteCalculatorAPP/1.0'}
+    headers = {'User-Agent': 'FuelRouteCalculatorAPP/1.0 (elwenmaculob@ymail.com)'}
 
-    response=requests.get(url, params=params, headers=headers)
+    response=requests.get(url, params=params, headers=headers, timeout=10)
+
+    print(f"DEBUG: Query='{location_name}' | Status={response.status_code} | Response={response.text}")
     if response.status_code==200:
         results=response.json()
         if results:
@@ -28,7 +30,7 @@ def get_route(start_text, finish_text):
 
     url = f"https://router.project-osrm.org/route/v1/driving/{start_coords[0]},{start_coords[1]};{finish_coords[0]},{finish_coords[1]}"
     params = {
-        'overview': 'full'
+        'overview': 'full',
         'geometries': 'geojson'
     }
 
@@ -37,9 +39,9 @@ def get_route(start_text, finish_text):
         data=response.json()
         if data.get('routes'):
             route=data['routes'][0]
-            distancein_miles=route['distance']*0.000621371
+            distance_miles=route['distance']*0.000621371
             return{
-                'distancein_miles': distancein_miles,
+                'distance_miles': distance_miles,
                 'geometry': route['geometry']['coordinates']
             }
     return None
