@@ -1,3 +1,4 @@
+#separate py file to read and store csv to RAM for fetching and fuel calculation
 import csv
 import os
 from django.conf import settings
@@ -28,4 +29,4 @@ class FuelData:
                     FUEL_STATION_LIST.append(fuelstation)
             print(f"Successfully stored {len(FUEL_STATION_LIST)} fuel stations into memory!")
         except Exception as e:
-            print(f"Error parsing CSV file: {e}")
+            print(f"Error reading CSV file: {e}")
