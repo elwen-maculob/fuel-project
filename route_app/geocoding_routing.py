@@ -12,7 +12,7 @@ def get_coords(location_name):
 
     response=requests.get(url, params=params, headers=headers, timeout=10)
 
-    print(f"DEBUG: Query='{location_name}' | Status={response.status_code} | Response={response.text}")
+    #print(f"DEBUG: Query='{location_name}' | Status={response.status_code} | Response={response.text}")
     if response.status_code==200:
         results=response.json()
         if results:

@@ -28,9 +28,7 @@ def calculate_distance(lat1, lon1, lat2, lon2):
     return earth_radius_in_miles * central_angle
 
 def is_near_route(station_lat, station_lon, geometry, max_distance_miles=15.0):
-    """Checks if a station is within max_distance_miles of any point along the route geometry.
-       Steps through geometry points (every 10th point) for performance.
-    """
+   
     for lon, lat in geometry[::10]:
         if calculate_distance(station_lat, station_lon, lat, lon) <= max_distance_miles:
             return True
