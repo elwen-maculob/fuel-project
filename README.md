@@ -1,6 +1,6 @@
 # Fuel Route Optimizer API 🚚⛽
 
-A high-performance Django REST API that calculates driving routes across the USA, identifies optimal and cost-effective fuel stops along the route based on real fuel price data, and computes total fuel expenses.
+A high-performance Django REST API that calculates driving routes across the USA, identifies optimal and cost-effective fuel stops along the route based on existing/sample fuel price data, and computes total fuel expenses.
 
 ---
 
@@ -11,7 +11,6 @@ This project solves the challenge of route-based fuel optimization for long-dist
 ### **Key Features**
 - **Single-Call Routing:** Uses OSRM to retrieve total distance and route geometry efficiently, minimizing external API overhead.
 - **Geospatial Proximity Filtering:** Filters stations based on distance from the exact route path.
-- **Performance Optimization:** Features coordinate sampling (`[::25]`) on route geometries to prevent timeouts on long cross-country requests (e.g., NY to SF).
 - **Fast Data Access:** Implements class-based CSV parsing with lazy loading and in-memory memoization.
 - **Vehicle Constraints:** Evaluates fuel stops based on a **500-mile vehicle range** and **10 MPG fuel efficiency**.
 
@@ -22,7 +21,7 @@ This project solves the challenge of route-based fuel optimization for long-dist
 - **Framework:** Django, Django REST Framework (DRF)
 - **External APIs:** OSRM (Open Source Routing Machine), Nominatim Geocoder
 - **Data Handling:** Python CSV Parser, JSON Caching
-- **Testing & API Client:** Insomnia / Postman
+- **Testing & API Client:** Insomnia
 
 ---
 
