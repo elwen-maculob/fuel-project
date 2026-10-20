@@ -1,0 +1,103 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: My first collection
+meta:
+  id: wrk_e77a41d95d264b22a70a5dcab63b58e1
+  created: 1792413001780
+  modified: 1792413001780
+  description: ""
+collection:
+  - url: http://127.0.0.1:8000/api/optimize/
+    name: Newyork to Sacramento
+    meta:
+      id: req_d708cc2b38994a62a73d39afa84d036f
+      created: 1792413001786
+      modified: 1792469045034
+      isPrivate: false
+      description: ""
+      sortKey: -1792413001786
+    method: GET
+    parameters:
+      - name: start
+        value: New York, NY
+        description: ""
+        disabled: false
+      - name: finish
+        value: San Anto, TX
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/optimize/
+    name: New York to Miami
+    meta:
+      id: req_9700466e0f00446cb621292a69909520
+      created: 1792466484375
+      modified: 1792469228958
+      isPrivate: false
+      description: ""
+      sortKey: -1792466484375
+    method: GET
+    parameters:
+      - name: start
+        value: New York, NY
+        description: ""
+        disabled: false
+      - name: finish
+        value: Miami, FL
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/optimize/
+    name: Sacramento to Cleaveland
+    meta:
+      id: req_b0b86ae9038f493dade785357f448c92
+      created: 1792469221677
+      modified: 1792469324391
+      isPrivate: false
+      description: ""
+      sortKey: -1792469221677
+    method: GET
+    parameters:
+      - name: start
+        value: Sacramento, CA
+        description: ""
+        disabled: false
+      - name: finish
+        value: Cleaveland, OH
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_a0133b95ff799263fac374f05e697e2ec56a7b32
+    created: 1792413001783
+    modified: 1792413001783
+environments:
+  name: Base Environment
+  meta:
+    id: env_a0133b95ff799263fac374f05e697e2ec56a7b32
+    created: 1792413001782
+    modified: 1792413001782
+    isPrivate: false
